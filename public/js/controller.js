@@ -338,7 +338,7 @@ controller('controller', ['$scope', 'socket', '$interval', 'ngAudio', function (
 
   socket.on('setTimer', function(data) {
     $interval.cancel($scope.timer);
-    $scope.timerDuration = data;
+    $scope.timerDuration = +data;
     $scope.timerStart = new Date().getTime();
     $scope.timer = $interval($scope.writeTimer, 1000);
     $scope.writeTimer();
