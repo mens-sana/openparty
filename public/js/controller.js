@@ -445,11 +445,13 @@ controller('controller', ['$scope', 'socket', '$interval', 'ngAudio', function (
     var date = new Date();
     var h    = date.getHours();
     var i    = date.getMinutes();
+    var j    = date.getSeconds();
 
     if(h < 10) h = '0' + h;
     if(i < 10) i = '0' + i;
+    if(j < 10) j = '0' + j;
 
-    return '['+h+':'+i+']';
+    return '['+h+':'+i+':'+j+']';
   }
 
 
